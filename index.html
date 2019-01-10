@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sudoku Solver</title>
+  <link rel="stylesheet" href="sudokuSolver.css"/>
+  <script src="sudokuSolver.js"></script> 
+</head>
+
+<body>
+  <h1 class="title"><b><u>Sudoku Solver</u></b></h1>
+<div class="row">
+	<div class="col col-lg">
+    <h2>Input</h2>
+  <form action="#" onchange="setButtonEnabled()" id="sudokuForm">
+    <div>
+        <input class="input-block top-left" id="sudokuBlock0" type="number" max="9" min="0" >
+        <input class="input-block top-mid" id="sudokuBlock1" type="number" max="9" min="0">
+        <input class="input-block top-right" id="sudokuBlock2" type="number" max="9" min="0" >
+        <input class="input-block top-left" id="sudokuBlock3" type="number" max="9" min="0">
+        <input class="input-block top-mid" id="sudokuBlock4" type="number" max="9" min="0">
+        <input class="input-block top-right" id="sudokuBlock5" type="number" max="9" min="0">
+        <input class="input-block top-left" id="sudokuBlock6" type="number" max="9" min="0">
+        <input class="input-block top-mid" id="sudokuBlock7" type="number" max="9" min="0"   >
+        <input class="input-block top-right" id="sudokuBlock8" type="number" max="9" min="0" >
+        <br>
+        <input class="input-block mid-left" id="sudokuBlock9" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock10" type="number" max="9" min="0">
+        <input class="input-block mid-right" id="sudokuBlock11" type="number" max="9" min="0">
+        <input class="input-block mid-left" id="sudokuBlock12" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock13" type="number" max="9" min="0"  >
+        <input class="input-block mid-right" id="sudokuBlock14" type="number" max="9" min="0">
+        <input class="input-block mid-left" id="sudokuBlock15" type="number" max="9" min="0" >
+        <input class="input-block mid-mid" id="sudokuBlock16" type="number" max="9" min="0">
+        <input class="input-block mid-right" id="sudokuBlock17" type="number" max="9" min="0">
+        <br>
+        <input class="input-block bot-left" id="sudokuBlock18" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock19" type="number" max="9" min="0"  >
+        <input class="input-block bot-right" id="sudokuBlock20" type="number" max="9" min="0">
+        <input class="input-block bot-left" id="sudokuBlock21" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock22" type="number" max="9" min="0">
+        <input class="input-block bot-right" id="sudokuBlock23" type="number" max="9" min="0">
+        <input class="input-block bot-left" id="sudokuBlock24" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock25" type="number" max="9" min="0">
+        <input class="input-block bot-right" id="sudokuBlock26" type="number" max="9" min="0">
+        <br>
+        <input class="input-block top-left" id="sudokuBlock27" type="number" max="9" min="0">
+        <input class="input-block top-mid" id="sudokuBlock28" type="number" max="9" min="0">
+        <input class="input-block top-right" id="sudokuBlock29" type="number" max="9" min="0" >
+        <input class="input-block top-left" id="sudokuBlock30" type="number" max="9" min="0"  >
+        <input class="input-block top-mid" id="sudokuBlock31" type="number" max="9" min="0"   >
+        <input class="input-block top-right" id="sudokuBlock32" type="number" max="9" min="0">
+        <input class="input-block top-left" id="sudokuBlock33" type="number" max="9" min="0">
+        <input class="input-block top-mid" id="sudokuBlock34" type="number" max="9" min="0"   >
+        <input class="input-block top-right" id="sudokuBlock35" type="number" max="9" min="0">
+        <br>
+        <input class="input-block mid-left" id="sudokuBlock36" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock37" type="number" max="9" min="0"   >
+        <input class="input-block mid-right" id="sudokuBlock38" type="number" max="9" min="0" >
+        <input class="input-block mid-left" id="sudokuBlock39" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock40" type="number" max="9" min="0">
+        <input class="input-block mid-right" id="sudokuBlock41" type="number" max="9" min="0">
+        <input class="input-block mid-left" id="sudokuBlock42" type="number" max="9" min="0" >
+        <input class="input-block mid-mid" id="sudokuBlock43" type="number" max="9" min="0"  >
+        <input class="input-block mid-right" id="sudokuBlock44" type="number" max="9" min="0">
+        <br>
+        <input class="input-block bot-left" id="sudokuBlock45" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock46" type="number" max="9" min="0">
+        <input class="input-block bot-right" id="sudokuBlock47" type="number" max="9" min="0">
+        <input class="input-block bot-left" id="sudokuBlock48" type="number" max="9" min="0" >
+        <input class="input-block bot-mid" id="sudokuBlock49" type="number" max="9" min="0">
+        <input class="input-block bot-right" id="sudokuBlock50" type="number" max="9" min="0">
+        <input class="input-block bot-left" id="sudokuBlock51" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock52" type="number" max="9" min="0">
+        <input class="input-block bot-right" id="sudokuBlock53" type="number" max="9" min="0" >
+        <br>
+        <input class="input-block top-left" id="sudokuBlock54" type="number" max="9" min="0" >
+        <input class="input-block top-mid" id="sudokuBlock55" type="number" max="9" min="0">
+        <input class="input-block top-right" id="sudokuBlock56" type="number" max="9" min="0" >
+        <input class="input-block top-left" id="sudokuBlock57" type="number" max="9" min="0"  >
+        <input class="input-block top-mid" id="sudokuBlock58" type="number" max="9" min="0">
+        <input class="input-block top-right" id="sudokuBlock59" type="number" max="9" min="0">
+        <input class="input-block top-left" id="sudokuBlock60" type="number" max="9" min="0">
+        <input class="input-block top-mid" id="sudokuBlock61" type="number" max="9" min="0">
+        <input class="input-block top-right" id="sudokuBlock62" type="number" max="9" min="0">
+        <br>
+        <input class="input-block mid-left" id="sudokuBlock63" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock64" type="number" max="9" min="0">
+        <input class="input-block mid-right" id="sudokuBlock65" type="number" max="9" min="0">
+        <input class="input-block mid-left" id="sudokuBlock66" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock67" type="number" max="9" min="0"  >
+        <input class="input-block mid-right" id="sudokuBlock68" type="number" max="9" min="0">
+        <input class="input-block mid-left" id="sudokuBlock69" type="number" max="9" min="0">
+        <input class="input-block mid-mid" id="sudokuBlock70" type="number" max="9" min="0">
+        <input class="input-block mid-right" id="sudokuBlock71" type="number" max="9" min="0" >
+        <br>
+        <input class="input-block bot-left" id="sudokuBlock72" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock73" type="number" max="9" min="0"   >
+        <input class="input-block bot-right" id="sudokuBlock74" type="number" max="9" min="0">
+        <input class="input-block bot-left" id="sudokuBlock75" type="number" max="9" min="0">
+        <input class="input-block bot-mid" id="sudokuBlock76" type="number" max="9" min="0"  >
+        <input class="input-block bot-right" id="sudokuBlock77" type="number" max="9" min="0">
+        <input class="input-block bot-left" id="sudokuBlock78" type="number" max="9" min="0"  >
+        <input class="input-block bot-mid" id="sudokuBlock79" type="number" max="9" min="0">
+        <input class="input-block bot-right" id="sudokuBlock80" type="number" max="9" min="0">
+        <br>
+      
+    </div>
+
+  </form>
+        <button onClick="start()" id="startButton">Solve</button>
+        <button onCLick="algorithm()" hidden="true" id="algorithm">Crook's Algorithm</button>
+        <button onClick="clearForm()">Clear Input</button>
+        <button onClick="clearSolution()">Clear Solution</button>
+ </div>
+	<div class="col col-lg">
+    <h2>Solution</h2>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock0" class="outputText top-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock1" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock2" class="outputText top-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock3" class="outputText top-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock4" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock5" class="outputText top-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock6" class="outputText top-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock7" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock8" class="outputText top-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock9" class="outputText mid-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock10" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock11" class="outputText mid-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock12" class="outputText mid-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock13" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock14" class="outputText mid-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock15" class="outputText mid-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock16" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock17" class="outputText mid-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock18" class="outputText bot-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock19" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock20" class="outputText bot-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock21" class="outputText bot-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock22" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock23" class="outputText bot-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock24" class="outputText bot-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock25" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock26" class="outputText bot-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock27" class="outputText top-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock28" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock29" class="outputText top-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock30" class="outputText top-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock31" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock32" class="outputText top-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock33" class="outputText top-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock34" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock35" class="outputText top-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock36" class="outputText mid-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock37" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock38" class="outputText mid-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock39" class="outputText mid-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock40" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock41" class="outputText mid-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock42" class="outputText mid-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock43" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock44" class="outputText mid-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock45" class="outputText bot-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock46" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock47" class="outputText bot-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock48" class="outputText bot-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock49" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock50" class="outputText bot-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock51" class="outputText bot-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock52" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock53" class="outputText bot-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock54" class="outputText top-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock55" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock56" class="outputText top-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock57" class="outputText top-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock58" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock59" class="outputText top-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock60" class="outputText top-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock61" class="outputText top-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock62" class="outputText top-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock63" class="outputText mid-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock64" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock65" class="outputText mid-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock66" class="outputText mid-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock67" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock68" class="outputText mid-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock69" class="outputText mid-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock70" class="outputText mid-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock71" class="outputText mid-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+          <h3 id="resultBlock72" class="outputText bot-left">0</h3>
+        </div>
+        <div class="col">
+          <h3 id="resultBlock73" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock74" class="outputText bot-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock75" class="outputText bot-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock76" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock77" class="outputText bot-right">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock78" class="outputText bot-left">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock79" class="outputText bot-mid">0</h3>
+        </div>
+        
+        <div class="col">
+          <h3 id="resultBlock80" class="outputText bot-right">0</h3>
+        </div>
+        
+
+    </div>
+    <br>
+	</div>
+</div>
+
+</body>
+</html>
