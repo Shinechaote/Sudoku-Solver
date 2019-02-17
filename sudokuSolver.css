@@ -82,12 +82,11 @@ div.form {
 }
 
 input[type=number] {
-  width: 10%;
   margin: 0px -3px 0px -2px;
+  text-align: center;
 }
 .outputText{
   width: 100%;
-
   margin: 0px -3px 0px -2px;
   font-size: 285%;
   text-align: center;
@@ -98,7 +97,8 @@ input[type=number] {
 }
 
 .col-lg {
-	 width: 49%;
+	 width: 48%;
+	 padding: 1%;
 }
 .col-md {
 	width: 40%;
@@ -121,24 +121,13 @@ input[type=number] {
 		width: 48%;
 	}
 }
+*/
 
-Phone View
+@media (max-width: 550px) {
 
-@media (max-width: 450px) {
-
-	.slicknav_menu {
-		display: block;
-	}
-	#menu {
-		display: none;
-	}
-	.col-sm {
-		width: 100%;
-	}
-	.col {
-		padding: 0%;
+	.col-lg{
+		width: 98%;
 	}
 	
 	
 }
-*/

@@ -651,8 +651,8 @@ function solveWithCrooks(uninitField,uninitPossibilities){
      
    }
     function clearSolution(){
-       for(var i = 0; i<9;i++){
-           document.getElementById("resultRow" + i.toString()).innerHTML = "0   0   0   0   0   0   0   0   0";
+       for(var i = 0; i<81;i++){
+           document.getElementById("resultBlock" + i.toString()).innerHTML = "0";
        }
        document.getElementById("startButton").disabled = false;
    }
