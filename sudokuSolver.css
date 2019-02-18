@@ -97,7 +97,7 @@ input[type=number] {
 }
 
 .col-lg {
-	 width: 48%;
+	 width: 98%;
 	 padding: 1%;
 }
 .col-md {
@@ -106,27 +106,10 @@ input[type=number] {
 
 
 
-/* Tablet View */
-/*
-@media (max-width: 768px) {
-
-	.slicknav_menu {
-		display: none;
-	}
-	#menu li {
-		display: block;
-		text-align: right;
-	}
-	.col-md {
-		width: 48%;
-	}
-}
-*/
-
-@media (max-width: 550px) {
+@media (min-width: 1000px) {
 
 	.col-lg{
-		width: 98%;
+		width: 48%;
 	}
 	
 	
