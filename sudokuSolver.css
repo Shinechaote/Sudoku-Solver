@@ -9,7 +9,8 @@
 }
 .input-block{
 	width: 100%;
-
+	margin: 0px -3px 0px -2px;
+	text-align: center;
 	font-size:275%;
 }
 .top-left{
@@ -81,10 +82,7 @@ div.form {
 	display: block;
 }
 
-input[type=number] {
-  margin: 0px -3px 0px -2px;
-  text-align: center;
-}
+
 .outputText{
   width: 100%;
   margin: 0px -3px 0px -2px;
@@ -98,7 +96,7 @@ input[type=number] {
 
 .col-lg {
 	 width: 98%;
-	 padding: 1%;
+
 }
 .col-md {
 	width: 40%;
@@ -110,6 +108,7 @@ input[type=number] {
 
 	.col-lg{
 		width: 48%;
+		padding: 1%;
 	}
 	
 	
