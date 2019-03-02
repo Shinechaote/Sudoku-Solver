@@ -110,6 +110,11 @@ div.form {
 		width: 48%;
 		padding: 1%;
 	}
-	
+	.outputText{
+		width: 100%;
+		margin: 0px;
+		font-size: 285%;
+		text-align: center;
+	}
 	
 }
