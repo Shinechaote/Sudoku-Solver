@@ -102,7 +102,50 @@ div.form {
 	width: 40%;
 }
 
+.solve{
+	background-color: #10d137;
+}
+.clear{
+	background-color: #c6c4c4;
+}
+.btn {
+	/* default for <button>, but useful for <a> */
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+  
+	/* create a small space when buttons wrap on 2 lines */
+	margin: 2px 0;
+  
+	/* invisible border (will be colored on hover/focus) */
+	border: solid 1px transparent;
+	border-radius: 4px;
+  
+	/* size comes from text & padding (no width/height) */
+	padding: 0.5em 1em;
+  
+	/* make sure colors have enough contrast! */
+	color: #ffffff;
 
+	outline: none;
+  }
+  
+  
+  /* Firefox: removes the inner border shown on focus */
+  .btn::-moz-focus-inner {
+	border: none;
+  }
+
+/* inverse colors on hover */
+.btn:hover {
+	color: #9050AA;
+	border-color: currentColor;
+	background-color: white;
+  }
+  
+  /* make sure we have a visible focus ring */
+
+  
 
 @media (min-width: 1000px) {
 
