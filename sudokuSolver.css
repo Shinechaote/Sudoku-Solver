@@ -92,10 +92,12 @@ div.form {
 
 .bigBlock{
 	padding : 0% 1%;
+	overflow: hidden;
 }
 .col {
 	float: left;
 	width:11%;
+	display: inline-block;
 }
 
 .col-lg {
