@@ -11,6 +11,7 @@
   <h1 class="title"><b><u>Sudoku Solver</u></b></h1>
 <div class="row">
 	<div class="col col-lg">
+    <div class="bigBlock">
     <h2>Input</h2>
   <form action="#" onchange="setButtonEnabled()" id="sudokuForm">
     <div class="row">
@@ -281,16 +282,19 @@
         
     </div>
   </form>
+  </div>
   <br>
+  <div class="actionButtons">
     <button onClick="start()" id="startButton" class="btn solve">Solve</button>
         <button onCLick="algorithm()" hidden="true" id="algorithm">Crook's Algorithm</button>
         <button onClick="clearForm()" class="btn clear" >Clear Input</button>
         <button onClick="clearSolution()" class="btn clear">Clear Solution</button>
   </div>
+</div>
 
 
         
-  <div class="col col-lg">
+  <div class="col col-lg bigBlock">
           <h2>Solution</h2>
           <div class="row">
               <div class="col">

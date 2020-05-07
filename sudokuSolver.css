@@ -89,6 +89,10 @@ div.form {
   font-size: 285%;
   text-align: center;
 }
+
+.bigBlock{
+	padding : 0% 1%;
+}
 .col {
 	float: left;
 	width:11%;
