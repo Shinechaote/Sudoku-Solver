@@ -1,2 +1,2 @@
 # Sudoku Solver
-An app which uses js to implement Crook's Algorithm
+An app which uses JavaScript to implement Crook's Algorithm
